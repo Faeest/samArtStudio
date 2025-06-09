@@ -19,7 +19,7 @@ export function ThemeDropdown() {
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="w-56" align="start">
 				<DropdownMenuGroup>
-					{themes.slice(3).map((theme) => (
+					{themes.map((theme) => (
 						<DropdownMenuItem key={theme.value} onClick={() => setTheme(theme.value)}>
 							<theme.icon className="size-4 shrink-0" />
 							<span className="truncate">{theme.value}</span>

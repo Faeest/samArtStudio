@@ -1,17 +1,16 @@
 import { LoginForm } from "@/components/login-form";
-import { GalleryVerticalEnd } from "lucide-react";
 export default function Home() {
 	return (
-		<div className="bg-muted flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
-			<div className="flex w-full max-w-sm flex-col gap-6">
-				<a href="#" className="flex items-center gap-2 self-center font-medium">
-					<div className="bg-primary text-primary-foreground flex size-6 items-center justify-center rounded-md">
-						<GalleryVerticalEnd className="size-4" />
-					</div>
-					Acme Inc.
-				</a>
-				<LoginForm />
+		<main className="w-full min-h-screen bg-muted flex flex-col">
+			<div id="navbar" className="w-full p-10 bg-primary"></div>
+			<div id="content" className="w-full flex flex-col">
+				<div id="home" className="min-h-screen bg-amber-400"></div>
+				<div id="about-us" className="min-h-screen bg-red-400"></div>
+				<div id="service" className="min-h-screen bg-lime-400"></div>
+				<div id="project" className="min-h-screen bg-blue-400"></div>
+				<div id="contact" className="min-h-screen bg-fuchsia-400"></div>
 			</div>
-		</div>
+			<div id="footer" className="p-10 bg-muted"></div>
+		</main>
 	);
 }

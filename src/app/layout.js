@@ -18,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="id">
+		<html lang="id" suppressHydrationWarning>
 			<body className={`${poppins.variable} antialiased`}>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange themes={themes.map((t) => t.value)}>
 					<Analytics />
