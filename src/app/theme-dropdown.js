@@ -15,7 +15,7 @@ export function ThemeDropdown() {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button variant="outline">Open</Button>
+				<Button variant="ghost">Theme</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="w-56" align="start">
 				<DropdownMenuGroup>
