@@ -1,4 +1,4 @@
-import { CatIcon, LaptopIcon, MoonIcon, SunIcon } from "lucide-react";
+import { CatIcon, LaptopIcon, MoonIcon, MountainIcon, SunIcon } from "lucide-react";
 
 export const themes = [
 	{
@@ -11,11 +11,11 @@ export const themes = [
 	},
 	// Custom
 	{
-		value: "catppuccin",
-		icon: CatIcon,
+		value: "graphite",
+		icon: MountainIcon,
 	},
 	{
-		value: "catppuccin-dark",
-		icon: CatIcon,
+		value: "graphite-dark",
+		icon: MountainIcon,
 	},
 ];
