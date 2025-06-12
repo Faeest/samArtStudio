@@ -20,7 +20,7 @@ export function ThemeDropdown({ className }) {
 					Theme
 				</Button>
 			</DropdownMenuTrigger>
-			<DropdownMenuContent className="w-56 p-0" align="start">
+			<DropdownMenuContent className="w-56 p-0 z-60" align="start">
 				<DropdownMenuGroup className="">
 					{themes.map((theme) => (
 						<Button key={theme.value} onClick={() => setTheme(theme.value)} className={cn("dark:hover:backdrop-brightness-0 hover:backdrop-brightness-200 relative flex items-center gap-2 px-2 py-1.5 text-sm w-full cursor-pointer rounded-none")} variant="secondary">
