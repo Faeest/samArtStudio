@@ -10,7 +10,7 @@ export default function Home() {
 	const [{ x, y }, scrollTo] = useWindowScroll();
 	return (
 		<main className="w-full max-w-10xl min-h-screen bg-muted flex flex-col mx-auto">
-			<div id="navbar" className={cn(y > 0 ? "scrolled !bg-background" : "", "group shadow-lg not-[.scrolled]:shadow-transparent transition-all w-full max-w-10xl py-5 px-10 bg-transparent fixed flex justify-center z-60 mx-auto")}>
+			<div id="navbar" className={cn(y > 0 ? "scrolled !bg-background" : "", "group shadow-lg not-[.scrolled]:shadow-transparent transition-all w-full max-w-10xl py-5 px-10 bg-transparent fixed flex justify-center z-30 mx-auto")}>
 				<div className="w-full max-w-6xl flex justify-between items-center gap-5">
 					<div className="md:text-2xl text-lg group-[:not(.scrolled)]:text-neutral-100 delay-75">Sam Art Studio</div>
 					<div className="lg:flex lg:gap-2 hidden">
@@ -36,7 +36,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div id="content" className="w-full flex flex-col z-50">
+			<div id="content" className="w-full flex flex-col z-20">
 				<div id="home" className="h-screen max-h-10xl flex flex-col justify-center items-center bg-transparent overflow-hidden relative">
 					<div className="overlay absolute top-0 left-0 right-0 h-screen bg-[url('/main-sam-art-new-dim.webp')] bg-cover bg-center brightness-80 -z-10"></div>
 					<div className="w-full max-w-6xl flex flex-col justify-between gap-5 px-10">
@@ -60,7 +60,10 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div id="service" className="h-screen max-h-10xl bg-lime-400"></div>
+				<div id="service" className="h-screen min-h-fit max-h-10xl bg-background flex flex-col justify-center items-center pt-10 pb-10 relative">
+					<div className={cn("absolute inset-0", "[background-size:20px_20px]", "[background-image:radial-gradient(var(--secondary)_1px,transparent_1px)]")} />
+					<div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:linear-gradient(0deg,transparent_20%,black)]"></div>
+				</div>
 				<div id="project" className="h-screen max-h-10xl bg-blue-400"></div>
 				<div id="contact" className="h-screen max-h-10xl bg-fuchsia-400"></div>
 			</div>
