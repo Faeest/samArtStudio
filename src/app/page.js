@@ -7,6 +7,9 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ButtonStarted } from "@/components/ui/button_started";
 import { BentoGridCustom } from "@/components/bento-2-grid";
+import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Label } from "radix-ui";
+import { Input } from "@base-ui-components/react";
 export default function Home() {
 	const [{ x, y }, scrollTo] = useWindowScroll();
 	return (
@@ -37,7 +40,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div id="content" className="w-full flex flex-col z-20">
+			<div id="content" className="w-full flex flex-col z-20 bg-background">
 				<div id="home" className="h-screen max-h-10xl flex flex-col justify-center items-center bg-transparent overflow-hidden relative">
 					<div className="overlay absolute top-0 left-0 right-0 h-screen bg-[url('/main-sam-art-new-dim.webp')] bg-cover bg-center brightness-80 -z-10"></div>
 					<div className="w-full max-w-6xl flex flex-col justify-between gap-5 px-10">
@@ -59,7 +62,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div id="service" className="h-screen min-h-fit max-h-10xl bg-background flex flex-col justify-center items-center pt-10 pb-10 relative">
+				<div id="service" className="h-screen min-h-fit max-h-10xl bg-background flex flex-col justify-center items-center pt-10 pb-20 relative">
 					<div className={cn("absolute inset-0", "[background-size:20px_20px]", "[background-image:radial-gradient(var(--secondary)_1px,transparent_1px)]")} />
 					<div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:linear-gradient(0deg,transparent_20%,black)]"></div>
 					<div className="w-full max-w-6xl flex flex-col justify-between lg:gap-16 px-10 z-80 gap-10xl pt-5">
@@ -67,8 +70,22 @@ export default function Home() {
 						<BentoGridCustom />
 					</div>
 				</div>
-				<div id="project" className="h-screen max-h-10xl bg-blue-400"></div>
-				<div id="contact" className="h-screen max-h-10xl bg-fuchsia-400"></div>
+				<div id="project" className="h-screen min-h-fit max-h-10xl relative bg-amber-50/70 dark:bg-card/50 py-20">
+					<div className="pointer-events-none absolute left-0 top-0 w-full h-full bg-amber-400/15 dark:bg-card/25 -z-10"></div>
+					<div className="w-full text-center text-foreground text-5xl">Projects</div>
+					<div className="w-full flex gap-5 justify-center mt-10 z-20">
+						<Card className="w-full max-w-sm shadow-none hover:shadow-lg hover:border-card-foreground/25 transition-all cursor-pointer active:scale-95">
+							<CardHeader>
+								<CardTitle>
+									<div className="w-full h-52 bg-[url('/service-2.jpg')] bg-cover rounded-sm mb-5"></div>
+									<div>Nigga</div>
+								</CardTitle>
+								<CardDescription>Enter your email below to login to your account</CardDescription>
+							</CardHeader>
+						</Card>
+					</div>
+				</div>
+				<div id="contact" className="h-screen max-h-10xl bg-emerald-400"></div>
 			</div>
 			<div id="footer" className="p-10 bg-muted"></div>
 		</main>
