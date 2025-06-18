@@ -62,7 +62,8 @@ export default function Home() {
 				<div id="service" className="h-screen min-h-fit max-h-10xl bg-background flex flex-col justify-center items-center pt-10 pb-10 relative">
 					<div className={cn("absolute inset-0", "[background-size:20px_20px]", "[background-image:radial-gradient(var(--secondary)_1px,transparent_1px)]")} />
 					<div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:linear-gradient(0deg,transparent_20%,black)]"></div>
-					<div className="w-full max-w-6xl flex lg:flex-row flex-col justify-between lg:gap-16 px-10">
+					<div className="w-full max-w-6xl flex flex-col justify-between lg:gap-16 px-10 z-80 gap-10xl pt-5">
+						<div className="w-full text-center text-foreground text-5xl">Our Services</div>
 						<BentoGridCustom />
 					</div>
 				</div>
