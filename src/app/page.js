@@ -10,6 +10,69 @@ import { BentoGridCustom } from "@/components/bento-2-grid";
 import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "radix-ui";
 import { Input } from "@base-ui-components/react";
+import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
+import { IconCode, IconPaperclip } from "@tabler/icons-react";
+import { CircleUser, Paintbrush } from "lucide-react";
+const projectsBento = [
+	{
+		title: "Web Design & Development",
+		description: "Modern, responsive websites tailored for performance and usability.",
+		header: <div className={cn("dark:brightness-80 dark:contrast-125 contrast-110 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-1.jpg')] bg-cover")}></div>,
+		className: "md:col-span-1",
+		icon: <IconCode className="h-4 w-4 text-muted-foreground" />,
+	},
+	{
+		title: "CMS Integration",
+		description: "Easy-to-manage websites using platforms like WordPress and Joomla.",
+		header: <div className={cn("dark:brightness-80 contrast-110 brightness-95 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-2.jpg')] bg-cover")}></div>,
+		className: "md:col-span-1",
+		icon: <IconPaperclip className="h-4 w-4 text-muted-foreground" />,
+	},
+	{
+		title: "Ui/UX Development",
+		description: "Clean, intuitive designs to enhance user experience and engagement.",
+		header: <div className={cn("dark:brightness-70 dark:contrast-110 contrast-80 brightness-95 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-3.jpg')] bg-cover")}></div>,
+		className: "md:col-span-1",
+		icon: <Paintbrush className="h-4 w-4 text-muted-foreground" />,
+	},
+	{
+		title: "Digital Brand Consulting",
+		description: "Strategic branding support to grow your presence in the digital world.",
+		header: <div className={cn("dark:brightness-80 dark:contrast-120 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-4.jpg')] bg-cover")}></div>,
+		className: "md:col-span-1",
+		icon: <CircleUser className="h-4 w-4 text-muted-foreground" />,
+	},
+];
+const servicesBento = [
+	{
+		title: "Web Design & Development",
+		description: "Modern, responsive websites tailored for performance and usability.",
+		header: <div className={cn("dark:brightness-80 dark:contrast-125 contrast-110 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-1.jpg')] bg-cover")}></div>,
+		className: "md:col-span-2 shrink",
+		icon: <IconCode className="h-4 w-4 text-muted-foreground" />,
+	},
+	{
+		title: "CMS Integration",
+		description: "Easy-to-manage websites using platforms like WordPress and Joomla.",
+		header: <div className={cn("dark:brightness-80 contrast-110 brightness-95 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-2.jpg')] bg-cover")}></div>,
+		className: "md:col-span-1",
+		icon: <IconPaperclip className="h-4 w-4 text-muted-foreground" />,
+	},
+	{
+		title: "Ui/UX Development",
+		description: "Clean, intuitive designs to enhance user experience and engagement.",
+		header: <div className={cn("dark:brightness-70 dark:contrast-110 contrast-80 brightness-95 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-3.jpg')] bg-cover")}></div>,
+		className: "md:col-span-1",
+		icon: <Paintbrush className="h-4 w-4 text-muted-foreground" />,
+	},
+	{
+		title: "Digital Brand Consulting",
+		description: "Strategic branding support to grow your presence in the digital world.",
+		header: <div className={cn("dark:brightness-80 dark:contrast-120 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-4.jpg')] bg-cover")}></div>,
+		className: "md:col-span-2 shrink",
+		icon: <CircleUser className="h-4 w-4 text-muted-foreground" />,
+	},
+];
 export default function Home() {
 	const [{ x, y }, scrollTo] = useWindowScroll();
 	return (
@@ -65,24 +128,23 @@ export default function Home() {
 				<div id="service" className="h-screen min-h-fit max-h-10xl bg-background flex flex-col justify-center items-center pt-10 pb-20 relative">
 					<div className={cn("absolute inset-0", "[background-size:20px_20px]", "[background-image:radial-gradient(var(--secondary)_1px,transparent_1px)]")} />
 					<div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:linear-gradient(0deg,transparent_20%,black)]"></div>
-					<div className="w-full max-w-6xl flex flex-col justify-between lg:gap-16 px-10 z-80 gap-10xl pt-5">
+					<div className="w-full max-w-6xl flex flex-col justify-between lg:gap-16 px-10 z-80 gap-10 pt-5">
 						<div className="w-full text-center text-foreground text-5xl">Our Services</div>
-						<BentoGridCustom />
+						<BentoGrid className="max-w-4xl mx-auto md:auto-rows-[20rem] z-10 bg-transparent">
+							{servicesBento.map((item, i) => (
+								<BentoGridItem key={"service-" + i} title={item.title} description={item.description} header={item.header} className={item.className} icon={item.icon} />
+							))}
+						</BentoGrid>
 					</div>
 				</div>
-				<div id="project" className="h-screen min-h-fit max-h-10xl relative bg-amber-50/70 dark:bg-card/50 py-20">
-					<div className="pointer-events-none absolute left-0 top-0 w-full h-full bg-amber-400/15 dark:bg-card/25 -z-10"></div>
-					<div className="w-full text-center text-foreground text-5xl">Projects</div>
-					<div className="w-full flex gap-5 justify-center mt-10 z-20">
-						<Card className="w-full max-w-sm shadow-none hover:shadow-lg hover:border-card-foreground/25 transition-all cursor-pointer active:scale-95">
-							<CardHeader>
-								<CardTitle>
-									<div className="w-full h-52 bg-[url('/service-2.jpg')] bg-cover rounded-sm mb-5"></div>
-									<div>Nigga</div>
-								</CardTitle>
-								<CardDescription>Enter your email below to login to your account</CardDescription>
-							</CardHeader>
-						</Card>
+				<div id="project" className="h-screen min-h-fit max-h-10xl bg-card dark:bg-card/50 flex flex-col justify-center items-center pt-10 pb-20 relativ">
+					<div className="w-full flex flex-col justify-between lg:gap-16 px-10 z-80 gap-10 pt-5">
+						<div className="w-full text-center text-foreground text-5xl">Projects</div>
+						<BentoGrid className="md:max-w-none max-w-4xl mx-auto md:auto-rows-[20rem] z-10 bg-transparent xl:!grid-cols-4 lg:!grid-cols-3 md:!grid-cols-2">
+							{projectsBento.map((item, i) => (
+								<BentoGridItem key={"project-" + i} title={item.title} description={item.description} header={item.header} className={item.className} icon={item.icon} />
+							))}
+						</BentoGrid>
 					</div>
 				</div>
 				<div id="contact" className="h-screen max-h-10xl bg-emerald-400"></div>
