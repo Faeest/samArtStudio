@@ -6,40 +6,40 @@ import { useWindowScroll } from "@uidotdev/usehooks";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ButtonStarted } from "@/components/ui/button_started";
-import { BentoGridCustom } from "@/components/bento-2-grid";
-import { Card, CardAction, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "radix-ui";
-import { Input } from "@base-ui-components/react";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
 import { IconCode, IconPaperclip } from "@tabler/icons-react";
 import { CircleUser, Paintbrush } from "lucide-react";
+import Link from "next/link";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 const projectsBento = [
 	{
 		title: "Web Design & Development",
 		description: "Modern, responsive websites tailored for performance and usability.",
 		header: <div className={cn("dark:brightness-80 dark:contrast-125 contrast-110 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-1.jpg')] bg-cover")}></div>,
-		className: "md:col-span-1",
+		className: "bg-popover md:col-span-1",
 		icon: <IconCode className="h-4 w-4 text-muted-foreground" />,
 	},
 	{
 		title: "CMS Integration",
 		description: "Easy-to-manage websites using platforms like WordPress and Joomla.",
 		header: <div className={cn("dark:brightness-80 contrast-110 brightness-95 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-2.jpg')] bg-cover")}></div>,
-		className: "md:col-span-1",
+		className: "bg-popover md:col-span-1",
 		icon: <IconPaperclip className="h-4 w-4 text-muted-foreground" />,
 	},
 	{
 		title: "Ui/UX Development",
 		description: "Clean, intuitive designs to enhance user experience and engagement.",
 		header: <div className={cn("dark:brightness-70 dark:contrast-110 contrast-80 brightness-95 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-3.jpg')] bg-cover")}></div>,
-		className: "md:col-span-1",
+		className: "bg-popover md:col-span-1",
 		icon: <Paintbrush className="h-4 w-4 text-muted-foreground" />,
 	},
 	{
 		title: "Digital Brand Consulting",
 		description: "Strategic branding support to grow your presence in the digital world.",
 		header: <div className={cn("dark:brightness-80 dark:contrast-120 flex flex-1 w-full h-full min-h-[9rem] rounded-sm bg-[url('/service-4.jpg')] bg-cover")}></div>,
-		className: "md:col-span-1",
+		className: "bg-popover md:col-span-1",
 		icon: <CircleUser className="h-4 w-4 text-muted-foreground" />,
 	},
 ];
@@ -81,20 +81,20 @@ export default function Home() {
 				<div className="w-full max-w-6xl flex justify-between items-center gap-5">
 					<div className="md:text-2xl text-lg group-[:not(.scrolled)]:text-neutral-100 delay-75">Sam Art Studio</div>
 					<div className="lg:flex lg:gap-2 hidden">
-						<Button variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
-							Home
+						<Button asChild variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
+							<a href="#home">Home</a>
 						</Button>
-						<Button variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
-							About Us
+						<Button asChild variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
+							<a href="#about-us">About Us</a>
 						</Button>
-						<Button variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
-							Service
+						<Button asChild variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
+							<a href="#service">Service</a>
 						</Button>
-						<Button variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
-							Project
+						<Button asChild variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
+							<a href="#project">Project</a>
 						</Button>
-						<Button variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
-							Contact
+						<Button asChild variant="ghost" className="group-[:not(.scrolled)]:text-neutral-100 delay-75">
+							<a href="#contact">Contact</a>
 						</Button>
 						<ThemeDropdown className="group-[:not(.scrolled)]:text-neutral-100 delay-75" />
 					</div>
@@ -114,7 +114,7 @@ export default function Home() {
 						<ButtonStarted className="not-sm:mx-auto not-sm:mt-5">Learn More</ButtonStarted>
 					</div>
 				</div>
-				<div id="about-us" className="h-screen min-h-fit max-h-10xl bg-background flex flex-col justify-center items-center pt-10 pb-10">
+				<div id="about-us" className="h-screen min-h-fit max-h-10xl bg-background flex flex-col justify-center items-center pt-10">
 					<div className="w-full max-w-6xl flex lg:flex-row flex-col justify-between lg:gap-16 px-10">
 						<div className="lg:w-[65%] shrink flex flex-col gap-5 py-16">
 							<div className="w-full lg:text-5xl md:text-4xl sm:text-3xl text-2xl sm:text-left text-center text-foreground font-medium">Professional Websites for Modern Businesses</div>
@@ -125,7 +125,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div id="service" className="h-screen min-h-fit max-h-10xl bg-background flex flex-col justify-center items-center pt-10 pb-20 relative">
+				<div id="service" className="h-screen min-h-fit max-h-10xl bg-background flex flex-col justify-center items-center pt-20 pb-20 relative">
 					<div className={cn("absolute inset-0", "[background-size:20px_20px]", "[background-image:radial-gradient(var(--secondary)_1px,transparent_1px)]")} />
 					<div className="pointer-events-none absolute inset-0 flex items-center justify-center bg-background [mask-image:linear-gradient(0deg,transparent_20%,black)]"></div>
 					<div className="w-full max-w-6xl flex flex-col justify-between lg:gap-16 px-10 z-80 gap-10 pt-5">
@@ -137,7 +137,7 @@ export default function Home() {
 						</BentoGrid>
 					</div>
 				</div>
-				<div id="project" className="h-screen min-h-fit max-h-10xl bg-card dark:bg-card/50 flex flex-col justify-center items-center pt-10 pb-20 relativ">
+				<div id="project" className="h-screen min-h-fit max-h-10xl bg-card dark:bg-card/50 flex flex-col justify-center items-center pt-10 pb-20 relative">
 					<div className="w-full flex flex-col justify-between lg:gap-16 px-10 z-80 gap-10 pt-5">
 						<div className="w-full text-center text-foreground text-5xl">Projects</div>
 						<BentoGrid className="md:max-w-none max-w-4xl mx-auto md:auto-rows-[20rem] z-10 bg-transparent xl:!grid-cols-4 lg:!grid-cols-3 md:!grid-cols-2">
@@ -147,9 +147,43 @@ export default function Home() {
 						</BentoGrid>
 					</div>
 				</div>
-				<div id="contact" className="h-screen max-h-10xl bg-emerald-400"></div>
+				<div id="contact" className="h-screen min-h-fit max-h-10xl bg-muted lg:p-20 pb-20">
+					<div className="w-full flex flex-col lg:flex-row justify-between px-10 z-80 pt-5 lg:p-6 pt-10 shadow">
+						<div className="grow flex flex-col w-full bg-card p-6 w-3/4">
+							<div className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl">Get in touch with us</div>
+							<div className="grid w-full grid-cols-2 gap-5 my-5">
+								<div className="grid items-center gap-3 col-span-1">
+									<Label htmlFor="email">Email</Label>
+									<Input type="email" id="email" placeholder="Email" />
+								</div>
+								<div className="grid items-center gap-3 col-span-1">
+									<Label htmlFor="email">Email</Label>
+									<Input type="email" id="email" placeholder="Email" />
+								</div>
+								<div className="grid items-center gap-3 col-span-2">
+									<Label htmlFor="email">Email</Label>
+									<Input type="email" id="email" placeholder="Email" />
+								</div>
+								<div className="grid items-center gap-3 col-span-2">
+									<Label htmlFor="email">Email</Label>
+									<Textarea type="email" id="email" placeholder="Email" />
+								</div>
+								<div className="flex justify-end col-span-2">
+									<Button className="w-fit cursor-pointer">Send Message</Button>
+								</div>
+							</div>
+						</div>
+						<div className="shrink flex justify-center items-center p-3 dark:bg-yellow-500 bg-yellow-400">
+							<div className="max-w-full overflow-hidden lg:w-md lg:max-w-sm w-full h-full not-lg:max-h-92 aspect-square">
+								<div id="gmap-canvas" className="h-full w-full max-w-full">
+									<iframe style={{ height: "100%", width: "100%", border: 0 }} frameBorder="0" src="https://www.google.com/maps/embed/v1/search?q=skiti+malang&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div id="footer" className="p-10 bg-muted"></div>
+			<div id="footer" className="p-10 dark:bg-yellow-600 bg-yellow-500"></div>
 		</main>
 	);
 }

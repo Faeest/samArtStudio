@@ -7,6 +7,7 @@ import { themes } from "./themes";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
 import { startCase } from "lodash";
+import { PaletteIcon } from "lucide-react";
 function CheckerBadge({ isActive }) {
 	return <IconCircleFilled className={cn("ml-auto size-3 text-primary opacity-0 transition-opacity", isActive && "opacity-100")} />;
 }
@@ -16,8 +17,9 @@ export function ThemeDropdown({ className }) {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger asChild>
-				<Button className={className} variant="ghost">
-					Theme
+				<Button className={cn(className, "lg:rounded-full lg:bg-neutral-50/10")} variant="ghost">
+					<span className="lg:hidden">Select Theme</span>
+					<PaletteIcon className="hidden lg:block" />
 				</Button>
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="w-56 p-0 z-60" align="start">

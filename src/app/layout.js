@@ -18,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="id" suppressHydrationWarning>
+		<html lang="id" className="scroll-smooth" suppressHydrationWarning>
 			<body className={`${poppins.variable} antialiased font-[family-name:var(--font-poppins)]`}>
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange themes={themes.map((t) => t.value)}>
 					<Analytics />
