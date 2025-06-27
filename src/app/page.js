@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { ButtonStarted } from "@/components/ui/button_started";
 import { BentoGrid, BentoGridItem } from "@/components/ui/bento-grid";
-import { IconCode, IconPaperclip } from "@tabler/icons-react";
+import { IconBrandFacebook, IconBrandInstagram, IconBrandPinterest, IconBrandX, IconCode, IconMailFilled, IconPaperclip, IconPhone, IconPhoneFilled } from "@tabler/icons-react";
 import { CircleUser, Paintbrush } from "lucide-react";
 import Link from "next/link";
 import { Label } from "@/components/ui/label";
@@ -148,8 +148,8 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="contact" className="h-screen min-h-fit max-h-10xl bg-muted lg:p-20 pb-20">
-					<div className="w-full flex flex-col lg:flex-row justify-between px-10 z-80 pt-5 lg:p-6 pt-10 shadow">
-						<div className="grow flex flex-col w-full bg-card p-6 w-3/4">
+					<div className="w-full flex flex-col lg:flex-row justify-between px-10 z-80 lg:p-6 pt-10">
+						<div className="grow flex flex-col bg-card p-6 w-full shadow-lg">
 							<div className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl">Get in touch with us</div>
 							<div className="grid w-full grid-cols-2 gap-5 my-5">
 								<div className="grid items-center gap-3 col-span-1">
@@ -173,7 +173,7 @@ export default function Home() {
 								</div>
 							</div>
 						</div>
-						<div className="shrink flex justify-center items-center p-3 dark:bg-yellow-500 bg-yellow-400">
+						<div className="shrink flex justify-center items-center p-3 dark:bg-yellow-500 bg-yellow-400 shadow-lg">
 							<div className="max-w-full overflow-hidden lg:w-md lg:max-w-sm w-full h-full not-lg:max-h-92 aspect-square">
 								<div id="gmap-canvas" className="h-full w-full max-w-full">
 									<iframe style={{ height: "100%", width: "100%", border: 0 }} frameBorder="0" src="https://www.google.com/maps/embed/v1/search?q=skiti+malang&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
@@ -183,7 +183,54 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div id="footer" className="p-10 dark:bg-yellow-600 bg-yellow-500"></div>
+			<div id="footer" className="p-10 dark:bg-yellow-500 bg-yellow-400 flex flex-wrap md:flex-row flex-col justify-center items-baseline gap-10">
+				<div className="socials flex flex-col text-neutral-950 not-md:w-full">
+					<span className="font-bold not-md:text-center w-full">SAM ART STUDIO</span>
+					<div className="flex gap-2 md:justify-start justify-center">
+						<IconBrandInstagram />
+						<IconBrandFacebook />
+						<IconBrandX />
+						<IconBrandPinterest />
+					</div>
+				</div>
+				<div className="explore flex flex-col text-neutral-950 not-md:w-full">
+					<span className="font-bold not-md:text-center w-full">EXPLORE</span>
+					<a className="not-md:text-center w-full" href="#home">
+						Home
+					</a>
+					<a className="not-md:text-center w-full" href="#about-us">
+						About Us
+					</a>
+					<a className="not-md:text-center w-full" href="#service">
+						Service
+					</a>
+					<a className="not-md:text-center w-full" href="#project">
+						Project
+					</a>
+					<a className="not-md:text-center w-full" href="#contact">
+						Contact
+					</a>
+				</div>
+				<div className="explore flex flex-col text-neutral-950 not-md:w-full gap-1">
+					<span className="font-bold not-md:text-center w-full">CONTACT</span>
+					<div className="max-w-64 not-md:text-center mx-auto mb-1">Jl. Raya Tidar No.100, Karangbesuki, Kec. Sukun, Kota Malang, Jawa Timur 65146</div>
+					<a href="#" className="flex items-center gap-1 not-md:justify-center w-full">
+						<IconPhoneFilled /> +6200000000
+					</a>
+					<a href="#" className="flex items-center gap-1 not-md:justify-center w-full">
+						<IconMailFilled /> samartstudio@gmail.com
+					</a>
+				</div>
+				<div className="explore flex flex-col text-neutral-950 not-md:w-full gap-1">
+					<span className="font-bold not-md:text-center w-full">GET LATEST NEWS FROM US</span>
+					<Input type="email" placeholder="Enter your email" className="w-full mb-2 rounded-full !placeholder-neutral-800" />
+					<Button className="rounded-full w-fit">Subscribe</Button>
+				</div>
+				<div className="w-full border border-black/20"></div>
+				<div className="w-full text-center text-neutral-950 not-md:text-left">
+					<span className="font-semibold">© 2024 Sam Art Studio. All rights reserved.</span>
+				</div>
+			</div>
 		</main>
 	);
 }
