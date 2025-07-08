@@ -179,19 +179,19 @@ export default function Home() {
 							<div className="grid w-full grid-cols-2 gap-5 my-5">
 								<motion.div transition={{ ease: "easeOut", delay: 0.1 }} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="grid items-center gap-3 col-span-1">
 									<Label htmlFor="email">Email</Label>
-									<Input type="email" id="email" placeholder="Email" />
+									<Input type="email" id="email" placeholder="john_doe@gmail.com" />
 								</motion.div>
 								<motion.div transition={{ ease: "easeOut", delay: 0.2 }} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="grid items-center gap-3 col-span-1">
-									<Label htmlFor="email">Email</Label>
-									<Input type="email" id="email" placeholder="Email" />
+									<Label htmlFor="email">Name</Label>
+									<Input type="email" id="email" placeholder="John Doe" />
 								</motion.div>
 								<motion.div transition={{ ease: "easeOut", delay: 0.3 }} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="grid items-center gap-3 col-span-2">
-									<Label htmlFor="email">Email</Label>
-									<Input type="email" id="email" placeholder="Email" />
+									<Label htmlFor="email">Subject</Label>
+									<Input type="email" id="email" placeholder="Subject" />
 								</motion.div>
 								<motion.div transition={{ ease: "easeOut", delay: 0.4 }} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="grid items-center gap-3 col-span-2">
-									<Label htmlFor="email">Email</Label>
-									<Textarea type="email" id="email" placeholder="Email" />
+									<Label htmlFor="email">Message</Label>
+									<Textarea type="email" id="email" placeholder="Message" />
 								</motion.div>
 								<motion.div transition={{ ease: "easeOut", delay: 0.5 }} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} className="flex justify-end col-span-2">
 									<Button className="w-fit cursor-pointer">Send Message</Button>
